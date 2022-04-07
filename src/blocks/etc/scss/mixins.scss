@@ -1,0 +1,53 @@
+@use "sass:math";
+
+@import "./smart-grid.scss";
+// px to rem
+//font-size: rem(20);
+//in html{font-size: $mainFontSize; media(---){font-size: 15px}; media(---){font-size: 14px}...
+@function rem($pixels, $context: $mainFontSize) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+	@return math.div($pixels, $context) * 1rem;
+}
+
+@mixin size-obj($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin placeholder {
+	::-webkit-input-placeholder {
+		@content;
+	}
+	:-moz-placeholder {
+		@content;
+	}
+	::-moz-placeholder {
+		@content;
+	}
+	:-ms-input-placeholder {
+		@content;
+	}
+}
+// layout helper
+@mixin mr($margin) {
+	& > *:not(:last-child) {
+		margin-right: $margin;
+	}
+}
+@mixin mb($margin) {
+	& > *:not(:last-child) {
+		margin-bottom: $margin;
+	}
+}
+
+@mixin pbody($padding-top, $padding-bottom) {
+	& {
+		padding-top: calc($padding-top / $container * 100%);
+		padding-bottom: calc($padding-bottom / $container * 100%);
+	}
+}
