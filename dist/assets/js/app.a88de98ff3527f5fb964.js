@@ -7,45 +7,28 @@
 "use strict";
 
 
-var collection_Item_Ft_Title = document.querySelectorAll(".item-ft__title"); // for (let i = 0; i < collection_Item_Ft_Title.length; i++) {
-// }
-
+var collection_Item_Ft_Title = document.querySelectorAll(".item-ft__title");
 var prevElements;
 collection_Item_Ft_Title.forEach(function (title) {
+  var itemFt = title.parentElement;
   var nav = title.nextElementSibling;
   title.addEventListener("click", function () {
-    var elements = [title, nav];
+    var elements = [title, nav, itemFt];
 
     if (prevElements) {
-      // [elements[2], elements[3]] = [prevElements[0], prevElements[1]];
       if (prevElements[0].outerText !== elements[0].outerText) {
-        prevElements[0].removeAttribute("data-state");
-        prevElements[1].removeAttribute("data-state");
-      } // console.log(elements);
-      // prevElements.forEach((element) => {
-      // 	// element.dataset.state ? element.removeAttribute("data-state") : (element.dataset.state = "open-spoiler");
-      // 	// if (element.dataset.state) element.removeAttribute("data-state");
-      // });
-
+        prevElements.forEach(function (item) {
+          return item.removeAttribute("data-state");
+        });
+      }
     }
 
     elements.forEach(function (element) {
       element.dataset.state ? element.removeAttribute("data-state") : element.dataset.state = "open-spoiler";
-      prevElements = elements; // if (!element.dataset.state) element.dataset.state = "open-spoiler";
+      prevElements = elements;
     });
   });
 });
-
-function remove(elements) {
-  if (prevElements) {
-    console.log(prevElements[0].outerText);
-    prevElements.forEach(function (element) {
-      if (element.dataset.state) element.removeAttribute("data-state");
-    });
-  }
-
-  prevElements = elements;
-}
 
 /***/ }),
 
