@@ -170,7 +170,7 @@ module.exports = {
 		),
 		// new FaviconsWebpackPlugin(path.resolve(__dirname, "../src/blocks/modules/header/Vector-1.svg")),
 		new FaviconsWebpackPlugin({
-			logo: path.resolve(__dirname, `${PATHS.src}/static/favicon.svg`),
+			logo: path.resolve(__dirname, `${PATHS.src}/static/favicon.png`),
 			// logo: path.resolve(__dirname, "../src/static/favicon.svg"),
 			outputPath: `${PATHS.assets}/static`,
 			cache: true,
