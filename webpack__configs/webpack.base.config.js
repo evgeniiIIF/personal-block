@@ -11,6 +11,8 @@ const { extendDefaultPlugins } = require("svgo");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const { runInContext } = require("lodash");
 
+const multipage = require("./multipage.config");
+
 let mode = "development";
 if (process.env.NODE_ENV === "production") {
 	mode = "production";
@@ -25,19 +27,28 @@ const PATHS = {
 	assets: "assets",
 };
 
-const PAGES_DIR = `${PATHS.src}/blocks/pages/`;
+const PAGES_DIR = `${PATHS.src}/blocks/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith(".pug"));
 
+const htmlPlugin = multipage.pages.map((page) => {
+	return new HtmlWebpackPlugin({
+		inject: true,
+		template: page.template,
+		filename: page.page,
+		chunks: [...page.chunks],
+	});
+});
 module.exports = {
 	mode: mode,
 	stats: { children: true },
 	externals: { paths: PATHS },
 	entry: {
 		// module: `${PATHS.src}/your-module.js`,
-		app: `${PATHS.src}`,
+		// app: `${PATHS.src}`,
 		// two: `${PATHS.src}/js/eshe.js`,
 		// styleSCSS: path.resolve(__dirname, "../src/blocks/pages/index.scss"),
 		// pugGG: path.resolve(__dirname, "../src/blocks/pages/index.pug"),
+		...multipage.entry,
 	},
 	output: {
 		filename: `${PATHS.assets}/js/[name].[contenthash].js`,
@@ -161,13 +172,13 @@ module.exports = {
 		// 	// template: `${PATHS.src}/blocks/pages/index.pug`,
 		// }),
 		// // new HtmlWebpackPugPlugin(),
-		...PAGES.map(
-			(page) =>
-				new HtmlWebpackPlugin({
-					template: `${PAGES_DIR}/${page}`,
-					filename: `${page.replace(/\.pug/, ".html")}`,
-				})
-		),
+		// ...PAGES.map(
+		// 	(page) =>
+		// 		new HtmlWebpackPlugin({
+		// 			template: `${PAGES_DIR}/${page}`,
+		// 			filename: `${page.replace(/\.pug/, ".html")}`,
+		// 		})
+		// ),
 		// new FaviconsWebpackPlugin(path.resolve(__dirname, "../src/blocks/modules/header/Vector-1.svg")),
 		new FaviconsWebpackPlugin({
 			logo: path.resolve(__dirname, `${PATHS.src}/static/favicon.png`),
@@ -200,6 +211,7 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: `${PATHS.assets}/css/[name].[contenthash].css`,
 		}),
+		...htmlPlugin,
 	],
 
 	module: {
@@ -264,6 +276,13 @@ module.exports = {
 				type: "asset/resource",
 				generator: {
 					filename: `${PATHS.assets}/img/[name].[hash][ext][query]`,
+				},
+			},
+			{
+				test: /\.(mp4)$/i,
+				type: "asset/resource",
+				generator: {
+					filename: `${PATHS.assets}/video/[name].[hash][ext][query]`,
 				},
 			},
 			{

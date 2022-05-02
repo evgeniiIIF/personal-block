@@ -1,13 +1,13 @@
 // JS
 // import "./js/";
 // import _ from "lodash";
-import "./blocks/modules/header/header.js";
-import "./blocks/modules/footer/footer-top/footer-top.js";
+// import "./blocks/modules/header/header.js";
+// import "./blocks/modules/footer/footer-top/footer-top.js";
 
 // SCSS
 // import "./assets/scss/main.scss";
-import "./blocks/pages/index.scss";
-import "./blocks/pages/index.pug";
+import "./blocks/index.scss";
+import "./blocks/index.pug";
 // import "./blocks/pages/about.pug";
 // import "../src/index.pug";
 
