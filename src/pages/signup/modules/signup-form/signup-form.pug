@@ -1,0 +1,25 @@
+.profile-form
+	.profile-form__container.container
+		.profile-form__main-wrap
+			h1.profile-form__title Регистрация
+			.profile-form__body
+				form.profile-form__form.form(action="/" method="post") 
+					.form__group
+						input.form__control(type="text" placeholder="Ваше имя")
+						span.form__line
+					.form__group
+						input.form__control(type="email" placeholder="Ваше email" )
+						span.form__line
+					.form__group
+						input.form__control(type="password" placeholder="Ваш пароль")
+						span.form__line
+					.form__group
+						input.form__control(type="password" placeholder="Подтвердите пароль")
+						span.form__line
+					.form__group
+						button.form__button.btn.btn--blue(type="submit") Зарегистрироваться
+					ul.profile-form__footer-list
+						li
+							a.profile-form__link(href="./reset.html") Востановить
+						li
+							a.profile-form__link(href="./signin.html") Вход

@@ -1,0 +1,86 @@
+.module-pb {
+	margin-bottom: 30px;
+}
+
+.addpost {
+	&__form {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.45);
+		border-radius: 5px;
+		padding: 15px 20px;
+		background: $secondery-color;
+		@include breakpoint($br-tablet) {
+			padding: 15px;
+			flex-direction: column;
+			align-items: stretch;
+			@include mb(50px);
+		}
+	}
+
+	&__form-textarea {
+		display: block;
+		height: 30px;
+		margin-right: 30px;
+		flex: 1 1 auto;
+		background: transparent;
+		border: none;
+		resize: none;
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 200%;
+		color: #d2d2d2;
+		overflow: hidden;
+		// &::-webkit-scrollbar {
+		// 	display: none;
+		// }
+		&::placeholder {
+		}
+		@include breakpoint($br-tablet) {
+			margin-right: 20px;
+		}
+	}
+
+	&__form-buttons {
+		display: flex;
+		align-self: end;
+	}
+
+	&__form-label,
+	&__form-button {
+		display: block;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: all 0.3s linear 0s;
+		@include breakpoint($br-tablet) {
+			width: 34px;
+			height: 34px;
+		}
+	}
+
+	&__form-label {
+		background: #ebebeb url("./photo\ 1.png") center no-repeat;
+		margin-right: 15px;
+
+		&:hover {
+			background-color: darken(#ebebeb, 20%);
+			transform: scale(105%);
+		}
+		input {
+			display: none;
+		}
+	}
+
+	&__form-button {
+		background: #3137c9;
+		border: 1px solid #fff;
+		&:hover {
+			background-color: darken(#3137c9, 20%);
+			transform: scale(105%);
+		}
+	}
+}

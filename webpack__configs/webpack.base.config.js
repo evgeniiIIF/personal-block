@@ -27,7 +27,7 @@ const PATHS = {
 	assets: "assets",
 };
 
-const PAGES_DIR = `${PATHS.src}/blocks/`;
+const PAGES_DIR = `${PATHS.src}`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith(".pug"));
 
 const htmlPlugin = multipage.pages.map((page) => {
@@ -44,10 +44,6 @@ module.exports = {
 	externals: { paths: PATHS },
 	entry: {
 		// module: `${PATHS.src}/your-module.js`,
-		// app: `${PATHS.src}`,
-		// two: `${PATHS.src}/js/eshe.js`,
-		// styleSCSS: path.resolve(__dirname, "../src/blocks/pages/index.scss"),
-		// pugGG: path.resolve(__dirname, "../src/blocks/pages/index.pug"),
 		...multipage.entry,
 	},
 	output: {
@@ -155,23 +151,10 @@ module.exports = {
 		// 	// inject: false,
 		// 	// template: path.resolve(__dirname, "./src/template.html"),
 		// 	// template: path.resolve(__dirname, "../src/index.pug"),
-		// 	template: path.resolve(__dirname, "../src/blocks/pages/index.pug"),
-		// 	// template: path.resolve(__dirname, "../src/blocks/pages/template.pug"),
-		// 	// template: `${PATHS.src}/blocks/pages/index.pug`,
+		// 	template: path.resolve(__dirname, "../src/pages/index.pug"),
+		// 	// template: path.resolve(__dirname, "../src/pages/template.pug"),
+		// 	// template: `${PATHS.src}/pages/index.pug`,
 		// }),
-		// new HtmlWebpackPlugin({
-		// 	title: "Development",
-		// 	filename: "about.html",
-		// 	scriptLoading: "module",
-		// 	inject: "body", //inject is vstavka link and scripts into html document
-		// 	// inject: false,
-		// 	// template: path.resolve(__dirname, "./src/template.html"),
-		// 	// template: path.resolve(__dirname, "../src/index.pug"),
-		// 	template: path.resolve(__dirname, "../src/blocks/pages/about.pug"),
-		// 	// template: path.resolve(__dirname, "../src/blocks/pages/template.pug"),
-		// 	// template: `${PATHS.src}/blocks/pages/index.pug`,
-		// }),
-		// // new HtmlWebpackPugPlugin(),
 		// ...PAGES.map(
 		// 	(page) =>
 		// 		new HtmlWebpackPlugin({
@@ -179,7 +162,6 @@ module.exports = {
 		// 			filename: `${page.replace(/\.pug/, ".html")}`,
 		// 		})
 		// ),
-		// new FaviconsWebpackPlugin(path.resolve(__dirname, "../src/blocks/modules/header/Vector-1.svg")),
 		new FaviconsWebpackPlugin({
 			logo: path.resolve(__dirname, `${PATHS.src}/static/favicon.png`),
 			// logo: path.resolve(__dirname, "../src/static/favicon.svg"),

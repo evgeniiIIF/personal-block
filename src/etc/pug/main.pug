@@ -1,0 +1,22 @@
+include ./mixins.pug
+
+block variables
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
+		title #{title}
+		meta(name="description", content=description)
+		block head
+	body(class=pageClass)
+		.wrapper 
+			include ../../pages/SHARED-MODULES/header/header.pug
+			block content
+			//- include ../../pages/SHARED-MODULES/footer/footer.pug
+			include ../../pages/SHARED-MODULES/modal-window/modal-window__contact.pug
+			include ../../pages/SHARED-MODULES/modal-window/modal-window__stories.pug
+			include ../../pages/SHARED-MODULES/modal-window/modal-window__social.pug
+			

@@ -1,0 +1,18 @@
+Изменить remote.origin.url для git repository
+
+Запустите git remoteдля просмотра списка существующих удаленных серверов и просмотра их имен и URL-адресов:
+git remote -v
+ 
+Вывод будет выглядеть примерно так:
+
+origin	https://github.com/user/repo_name.git (fetch)
+origin	https://github.com/user/repo_name.git (push)
+ 
+Изменить URL из origin к https://github.com/user/repo_name-NEW.git
+
+git remote set-url origin git@gitserver.com:user/repo_name.git
+
+============================================
+
+Генератор стрелок CSS
+http://apps.eky.hk/css-triangle-generator/

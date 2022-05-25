@@ -1,0 +1,74 @@
+.post
+	.container
+		.post__body
+			.post__content 
+				.post__ations
+					a.post__action(href="./index.html") вернуться назад
+					a.post__action(href="#" data-modal='social') поделиться
+						img(src=require("./Vectora.svg"), alt="shared")
+				h2.post__title(href="#")  Как писать код быстро и безболезненно?
+				ul.post__date
+					li.post__date-item
+						time(datetime='21-06-2020') 21.06.2020
+					li.post__date-item
+						a(href="#") создание сайтов
+				p.post__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.
+				p.post__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.
+				.post__image
+					img(src=require("./imagepf.jpg"), alt="viev")
+				p.post__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.
+			.post__interesting
+				h3.post__interesting-title Интересно почитать
+				ul.post__interesting-list
+					li.item-interesting
+						h4.item-interesting__title
+							a(href="#") Как я сходил на FrontEnd Conf 2021
+						ul.post__date
+							li.post__date-item
+								time(datetime='21-06-2020') 21.06.2020
+					li.item-interesting
+						h4.item-interesting__title
+							a(href="#") Как писать код быстро и безболезненно ?
+						ul.post__date
+							li.post__date-item
+								time(datetime='21-06-2020') 21.06.2020
+					li.item-interesting
+						h4.item-interesting__title
+							a(href="#") Купил новый ноутбук за 150 000 руб
+						ul.post__date
+							li.post__date-item
+								time(datetime='21-06-2020') 21.06.2020
+					li.item-interesting
+						h4.item-interesting__title
+							a(href="#") Купил новый ноутбук за 150 000 руб
+						ul.post__date
+							li.post__date-item
+								time(datetime='21-06-2020') 21.06.2020
+			.post__discussion.discussion
+				h3.discussion__title Обсуждение
+				form.discussion__form(action="/" method="post")
+					.discussion__formgroup
+						textarea.discussion__textarea(name="discussion__textarea" placeholder="Текст комментария" tabindex='2' data-autoresize)
+						span.discussion__formgroup-line
+					button.discussion__button.btn.btn--blue(type="button") Отправить
+			ul.comments
+				li.comments__item.item-comment 
+					.item-comment__author
+						.item-comment__image
+							img(src=require("./Ellipse 2pf.jpg"), alt="")
+						.item-comment__data
+							p.item-comment__name Иван Иванов
+							time.item-comment__time(datetime='20.06.2020 10:30') 1 неделю назад
+					p.item-comment__text Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.
+					.item-comment__action ответить
+
+					ul.comments
+						li.comments__item.item-comment 
+							.item-comment__author
+								.item-comment__image
+									img(src=require('./Ellipse 2pf-1.jpg'), alt="")
+								.item-comment__data
+									p.item-comment__name John
+									time.item-comment__time(datetime='20.06.2020 10:30') 1 неделю назад
+							p.item-comment__text Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.
+							.item-comment__action ответить

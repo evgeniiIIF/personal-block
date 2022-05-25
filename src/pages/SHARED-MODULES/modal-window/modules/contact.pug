@@ -1,0 +1,21 @@
+.modal(id="contact")
+	.modal__content.modal__contact
+		form.profile-form__form.form(action="/" method="post") 
+			.form__group
+				input.form__control(type="text" placeholder="Ваше имя")
+				span.form__line
+			.form__group
+				input.form__control(type="email" placeholder="Ваше email" )
+				span.form__line
+			.form__group
+				textarea.form__control( placeholder="Текст сообщения" data-autoresize)
+				span.form__line
+			.form__group
+				button.form__button.btn.btn--blue(type="submit") Отправить
+			ul.form__footer-list
+				li
+					a.form__link(href="mailto:info@mywebsite.ru") e-mail: info@mywebsite.ru
+				li
+					a.form__link(href="tel:94323285622") тел: +943-232-856-22
+		button.modal__close
+			img(src=require("./Vector-sm.svg"), alt="close")

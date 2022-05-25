@@ -1,0 +1,173 @@
+.header {
+	position: fixed;
+	left: $sidebar-width;
+	right: 0;
+	top: 0;
+	z-index: $z-header;
+	background: $secondery-color;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include breakpoint($br-tablet) {
+		left: 0;
+	}
+
+	&__right {
+		display: flex;
+	}
+
+	&__profile {
+	}
+
+	&__search {
+		background: $primary-color;
+		max-width: 212px;
+		&:focus {
+			border: 2px solid #000;
+		}
+	}
+
+	&__input {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		padding: 14px 20px;
+		border: none;
+		background: transparent;
+		color: inherit;
+		&:focus {
+			border: 2px solid #fff;
+		}
+	}
+}
+
+.nav-header {
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		position: relative;
+		transition: all 0.1s linear;
+
+		&:not([data-nohover="true"]):hover {
+			background: #3137c9;
+
+			.nav-header__link {
+				position: relative;
+				// padding-right: 30px;
+			}
+			// .nav-header__link::after {
+			// 	content: "";
+			// 	position: absolute;
+			// 	right: 11px;
+			// 	top: 50%;
+			// 	border-style: solid;
+			// 	border-width: 5px 5px 0 5px;
+			// 	border-color: #ffffff transparent transparent transparent;
+			// 	transform: translate(0, -50%);
+			// }
+			.nav-header-subnav {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 100%;
+			}
+		}
+
+		@include breakpoint($br-tablet) {
+			display: none;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		padding: 14px 15px;
+		font-weight: 400;
+		font-size: 11px;
+		line-height: 150%;
+		text-transform: uppercase;
+		color: inherit;
+	}
+}
+
+.nav-header-subnav {
+	display: none;
+	padding: 10px 0;
+	width: 165px;
+	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+	border-radius: 0px 0px 5px 5px;
+	background: #3137c9;
+
+	&__item {
+		padding: 5px 20px;
+
+		&:hover {
+			background: darken(#3137c9, 10%);
+		}
+	}
+
+	&__link {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+		color: #ffffff;
+	}
+}
+
+.burger {
+	display: none;
+	position: relative;
+	width: 30px;
+	height: 20px;
+	margin-left: 15px;
+	background: none;
+	border: none;
+	@include breakpoint($br-tablet) {
+		display: block;
+	}
+	&::after,
+	&::before {
+		content: "";
+	}
+
+	span,
+	&::after,
+	&::before {
+		position: absolute;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 2px;
+		background: #fff;
+	}
+	&::before {
+		top: 0;
+	}
+	&::after {
+		bottom: 0;
+	}
+	span {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.show-sidebar & {
+		span,
+		&::after,
+		&::before {
+			top: 50%;
+		}
+		span {
+			opacity: 0;
+		}
+		&::before {
+			transform: rotate(45deg);
+		}
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+}

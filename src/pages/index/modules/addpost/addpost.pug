@@ -1,0 +1,10 @@
+.addpost
+	.container
+		.module-pb
+			form.addpost__form(action="/" method="post")
+				textarea.addpost__form-textarea(name="post-text" placeholder="Напишите что-нибудь" data-autoresize )
+				.addpost__form-buttons
+					label.addpost__form-label(for="add-post-file") 
+						input(type="file",id="add-post-file")
+					button.addpost__form-button(type="submit")
+						img(src=require("./Vector.png"), alt="send")

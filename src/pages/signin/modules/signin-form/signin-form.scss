@@ -1,0 +1,87 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.profile-form {
+	&__container {
+	}
+	&__main-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include mb(60px);
+	}
+	&__title {
+		font-weight: 400;
+		font-size: 21px;
+	}
+	&__body {
+		display: flex;
+		width: 100%;
+	}
+	&__form {
+		flex: 1 1 100%;
+	}
+	&__footer-list {
+		display: flex;
+		@include mr(10px);
+		a {
+			font-weight: 400;
+			font-size: 12px;
+			text-transform: lowercase;
+			color: inherit;
+		}
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include mb(25px);
+
+	&__group {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	&__control {
+		height: 25px;
+		padding-bottom: 10px;
+		overflow: hidden;
+		resize: none;
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid #3f3f3f;
+		font-weight: 400;
+		font-size: 14px;
+		color: inherit;
+
+		&::placeholder {
+			color: rgba(255, 255, 255, 0.2);
+		}
+		&:focus + .form__line {
+			width: 100%;
+			transition: width 0.3s;
+		}
+	}
+	&__line {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 1;
+		width: 0;
+		height: 1px;
+		background: #107eff;
+	}
+	&__button {
+		align-self: center;
+		padding: 8px 15px;
+		box-shadow: 0px 4px 15px -7px rgba(48, 55, 201, 0.3);
+		border-radius: 5px;
+		border: none;
+	}
+}

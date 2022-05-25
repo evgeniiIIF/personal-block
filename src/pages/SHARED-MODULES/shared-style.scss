@@ -1,0 +1,34 @@
+body {
+	&.show-sidebar {
+		overflow: hidden;
+	}
+}
+.main {
+	padding-left: $sidebar-width;
+	padding-top: 112px;
+	@include mb(30px);
+	@include breakpoint($br-tablet) {
+		padding-left: 0;
+		padding-top: 70px;
+	}
+}
+
+.ibg {
+	position: relative;
+
+	img,
+	video,
+	iframe {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+@import "./modal-window/modal-window.scss";
+
+.open-modal-window {
+	overflow: hidden;
+}

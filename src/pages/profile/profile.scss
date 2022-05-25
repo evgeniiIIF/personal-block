@@ -1,0 +1,119 @@
+@import "../../etc/scss/smart-grid.scss";
+@import "../../etc/scss/vars.scss";
+@import "../../etc/scss/reset.scss";
+@import "../../etc/scss/mixins.scss";
+@import "../../etc/fonts/fonts.scss";
+
+html {
+	font-size: $mainFontSize;
+
+	@include xs(font-size, 11px);
+	@include sm(font-size, 12px);
+	@include md(font-size, 13px);
+	@include lg(font-size, $maxFontSize);
+	// @include xl(font-size, 15px);
+	// @include xxl(font-size, 16px);
+
+	// @include xs($maxWidth, 425px);
+	// @include sm($maxWidth, 576px);
+	// @include md($maxWidth, 768px);
+	// @include lg($maxWidth, 992px);
+	// @include xl($maxWidth, 1200px);
+	// @include xxl($maxWidth, 1400px);
+
+	// @media (max-width: 425px) {
+	// 	font-size: 2px;
+	// }
+	// @media (max-width: 576px) {
+	// 	font-size: 4px;
+	// }
+	// @media (max-width: 767px) {
+	// 	font-size: 6px;
+	// }
+	// @media (max-width: 992px) {
+	// 	font-size: 8px;
+	// }
+	// @media (max-width: 1200px) {
+	// 	font-size: 10px;
+	// }
+	// @media (max-width: 1400px) {
+	// 	font-size: 10px;
+	// }
+}
+body {
+	font-family: $mainFont;
+	background: $default-color;
+	color: $mainFontColor;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	overflow: hidden;
+}
+.main {
+	flex: 1 1 auto;
+}
+.container {
+	@include wrapper();
+	box-sizing: content-box;
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition: background 0.3s ease 0s;
+	cursor: pointer;
+	color: inherit;
+
+	&--bgcolor,
+	&--border {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 153%;
+		letter-spacing: 0.2px;
+		border: 3px solid transparent;
+		transition: background 0.3s ease 0s, color 0.3s ease 0s;
+	}
+	&--bgcolor {
+		background: #ed3024;
+		color: #ffffff;
+
+		&:hover {
+			border-color: #252b42;
+			background: #ffffff;
+			color: #252b42;
+		}
+	}
+	&--border {
+		border: 1px solid #0d5c63;
+		color: #0d5c63;
+
+		&:hover {
+			border: 3px solid #fff;
+			background: #0d5c63;
+			color: #fff;
+		}
+	}
+}
+
+@import "../SHARED-MODULES/shared-style.scss";
+
+@import "../SHARED-MODULES/header/header.scss";
+// @import "../SHARED-MODULES/footer/footer.scss";
+
+//  ========= Modules ==========
+
+@import "../SHARED-MODULES/sidebar/sidebar.scss";
+@import "./modules/profile-form/profile-form.scss";
+// @import "./modules/addpost/addpost.scss";
+// @import "../SHARED-MODULES/pagination/pagination.scss";
+// @import "./modules/module/module.scss";
+// @import "./modules/module/module.scss";
+// @import "./modules/module/module.scss";
+// @import "./modules/module/module.scss";
+// @import "./modules/module/module.scss";
+// @import "./modules/module/module.scss";
+//  ========= /Modules ==========

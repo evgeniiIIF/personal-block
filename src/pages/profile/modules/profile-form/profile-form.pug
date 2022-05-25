@@ -1,0 +1,23 @@
+.profile-form
+	.profile-form__container.container
+		h1.profile-form__title Профиль
+		.profile-form__body
+			form.profile-form__form.form(action="/" method="post") 
+				.form__group
+					input.form__control(type="text" placeholder="Ваше имя" value="Иван Иванов")
+					span.form__line
+				.form__group
+					input.form__control(type="email" placeholder="Ваше email" value='pro100.sto@yandex.ru')
+					span.form__line
+				.form__group
+					input.form__control(type="password" placeholder="Новый пароль")
+					span.form__line
+				.form__group
+					input.form__control(type="password" placeholder="Подтвердите пароль")
+					span.form__line
+				.form__group
+					button.form__button.btn.btn--blue(type="submit") Сохранить
+			.profile-form__avatar
+				img(src=require("./avatara.jpg"), alt="")
+				label.profile-form__avatar-label(for="file-avatar") выбрать  аватар
+					input(type="file", name="avatar" id='file-avatar')

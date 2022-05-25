@@ -1,0 +1,64 @@
+.stories {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		@include mr(12px);
+		overflow-x: auto;
+	}
+}
+
+.item-stories {
+	flex: 1 0 110px;
+	position: relative;
+	border-radius: 6px;
+	overflow: hidden;
+	box-shadow: 0px 5px 15px 0px #00000033;
+	cursor: pointer;
+	&:hover {
+		img {
+			transition: transform 5s linear 0s;
+			transform: scale(150%);
+		}
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 52.08%, rgba(0, 0, 0, 0.8) 100%);
+		z-index: 1;
+	}
+	img {
+		width: 100%;
+	}
+	&__title {
+		position: absolute;
+		padding: 15px 17px;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: 2;
+
+		font-family: "Lato";
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 133%;
+	}
+
+	&__date {
+		position: absolute;
+		padding: 15px 12px;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+
+		font-family: "Lato";
+		font-weight: 400;
+		font-size: 12px;
+		text-align: right;
+		text-transform: uppercase;
+	}
+}

@@ -1,0 +1,16 @@
+.profile-form
+	.profile-form__container.container
+		.profile-form__main-wrap
+			h1.profile-form__title Востановить пароль
+			.profile-form__body
+				form.profile-form__form.form(action="/" method="post") 
+					.form__group
+						input.form__control(type="email" placeholder="Ваше email")
+						span.form__line
+					.form__group
+						button.form__button.btn.btn--blue(type="submit") Востановить
+					ul.profile-form__footer-list
+						li
+							a.profile-form__link(href="./signin.html") Вход
+						li
+							a.profile-form__link(href="./signup.html") Регистрация

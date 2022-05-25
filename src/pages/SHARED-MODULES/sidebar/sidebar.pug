@@ -1,0 +1,65 @@
+aside.sidebar
+	.sidebar__header 
+		img(src=require('./Rectangle.jpg'), alt="")
+	.sidebar__content 
+		.sidebar__profile.profile
+			.profile__image 
+				img(src=require('./avatara.jpg'), alt="")
+			p.profile__name Иван Иванов
+			p.profile__text блог front-end разработчика
+			ul.profile__social.social 
+				li.social__item
+					a.social__link(href="#") 
+						img(src=require("./instagram (1) 1_soc.svg"), alt="insta")
+				li.social__item
+					a.social__link(href="#") 
+						img(src=require("./vk 1_soc.svg"), alt="vk")
+				li.social__item
+					a.social__link(href="#") 
+						img(src=require("./pinterest 1_soc.svg"), alt="pinterest")
+		p.sidebar__text Front-end разработчик. Практик верстки сайтов.Созданием сайтов занимаюсь с 2012 года. Работал в нескольких ИТ компаниях и наработал более 10 000 часов в создании сайтов различной сложности.
+		nav.nav-header.nav-header--mobile-nav
+			ul.nav-header__list
+				li.nav-header__item
+					a.nav-header__link(href="./index.html") Главная
+					ul.nav-header-subnav
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Создание сайтов
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Интернет-маркетинг
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Продвижение видео
+				li.nav-header__item
+					a.nav-header__link(href="./post-full.html") Статьи
+					ul.nav-header-subnav
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Создание сайтов
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Интернет-маркетинг
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Продвижение видео
+				li.nav-header__item
+					a.nav-header__link(href="./post-full.html") Обо мне
+					ul.nav-header-subnav
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Создание сайтов
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Интернет-маркетинг
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Продвижение видео
+				li.nav-header__item
+					a.nav-header__link(href="./post-full.html") Реклама
+					ul.nav-header-subnav
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Создание сайтов
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Интернет-маркетинг
+						li.nav-header-subnav__item
+							a.nav-header-subnav__link(href="./post-full.html") Продвижение видео
+				li.nav-header__item
+					a.nav-header__link(href="./profile.html") Профиль
+				li.nav-header__item
+					a.nav-header__link(href="./signin.html") Вход
+		.sidebar__buttons 
+			a.sidebar__btn.btn.btn--red(href="./works.html") Мои работы
+			a.sidebar__btn.btn.btn--blue(href="#" data-modal='contact') Написать мне
