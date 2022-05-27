@@ -57,8 +57,9 @@
 		padding: 77px 0;
 	}
 	&__stories {
-		flex: 0 1 427px;
-		max-height: 588px;
+		margin: 100px 30px 50px 30px;
+		flex: 0 1 300px;
+		max-height: 450px;
 		height: 100%;
 		@include breakpoint($br-modile) {
 			max-width: 250px;

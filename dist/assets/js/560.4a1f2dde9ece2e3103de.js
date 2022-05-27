@@ -21,6 +21,11 @@ modButtons.forEach(function (item) {
     body.classList.add("modal-show");
     body.style.paddingRight = getScrollWidth() + "px";
     header.style.paddingRight = getScrollWidth() + "px";
+
+    if (modalId == "stories") {
+      var video = document.querySelector("video");
+      video.play();
+    }
   });
 });
 mobalClose.forEach(function (item) {
