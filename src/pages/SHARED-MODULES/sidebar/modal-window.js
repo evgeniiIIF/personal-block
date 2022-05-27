@@ -35,11 +35,16 @@ mobalClose.forEach((item) => {
 modalMask.forEach((item) => {
 	item.addEventListener("click", (event) => {
 		let eTarget = event.currentTarget;
-
+		let modalId = eTarget.getAttribute("data-modal");
 		eTarget.classList.remove("show");
 		body.classList.remove("modal-show");
 		body.style.paddingRight = "0px";
 		header.style.paddingRight = "0px";
+		let video = document.querySelector("video");
+		if (video) {
+			video.pause();
+			video.currentTime = 0;
+		}
 	});
 });
 

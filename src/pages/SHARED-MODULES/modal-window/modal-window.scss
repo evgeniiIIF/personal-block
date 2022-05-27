@@ -60,6 +60,10 @@
 		flex: 0 1 427px;
 		max-height: 588px;
 		height: 100%;
+		@include breakpoint($br-modile) {
+			max-width: 250px;
+			max-height: 400px;
+		}
 	}
 }
 .form {
